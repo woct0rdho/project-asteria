@@ -39,7 +39,7 @@
 \newcommand{\unit}[1]{\,{\rm #1}}
 \newcommand{\internote}[1]{\intertext{\centering #1}}
 
-\renewcommand\contentsname{目\ 录}
+\renewcommand\contentsname{目\hspace{1em}录}
 
 \makeatletter
 \renewcommand{\CTEX@chapter@beforeskip}{10\p@}
@@ -47,9 +47,10 @@
 
 \pagestyle{fancy}
 \fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\thepage}
+\setlength{\headheight}{12.65pt}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\rhead{\thepage}
 \makeatletter
 \let \ps@plain \ps@fancy
 \makeatother
