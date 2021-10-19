@@ -65,7 +65,7 @@ a_i=\begin{cases}
 最平凡的情况是$f(x)=1$，也就是$\int_{-\infty}^{\infty} \delta(x) \opd x=1$。$\delta(x)$的图像大致如图\ref{fig-delta-x}，但是图中的峰应该是无限细、无限高的，而且下面的面积为$1$，还要注意它是偶函数。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/delta-x}
+\includegraphics[scale=0.5]{fig/delta-x.png}
 \caption{看起来尖尖的}
 \label{fig-delta-x}
 \end{figure}
@@ -79,8 +79,8 @@ a_i=\begin{cases}
 $\delta(x)$可以求导和积分，一般令$\theta(x)=\int_{-\infty}^x \delta(t) \opd t$，称为单位阶跃函数或者赫维赛德$\theta$函数（传说是因为theta和step谐音）。$\delta'(x)$和$\theta(x)$如图\ref{fig-delta-d-x}，你可以自己想一想更高阶的导数和积分的样子。物理学中的电偶极子可以用$\delta'(x)$描述。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/delta-d-x}
-\includegraphics[scale=0.5]{fig/theta-x}
+\includegraphics[scale=0.5]{fig/delta-d-x.png}
+\includegraphics[scale=0.5]{fig/theta-x.png}
 \caption{$\delta'(x)$和$\theta(x)$}
 \label{fig-delta-d-x}
 \end{figure}
@@ -136,7 +136,7 @@ f''(x)=\begin{cases}
 现在神奇的事情来了：任何$f(x)$可以看作无穷多个不同高度的$\delta$函数的叠加，也就是$f(x)=\int_{-\infty}^{\infty} f(t) \delta(x-t) \opd t$，如图\ref{fig-many-delta}。比如$t=1$时，要放一个$\delta(x-1)$，高度为$f(1)$。这样一来，可以直接写出特解$y(x)=\int_{-\infty}^{\infty} f(t) G(x-t) \opd t$。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/many-delta}
+\includegraphics[scale=0.5]{fig/many-delta.png}
 \caption{戳得多了就变光滑了}
 \label{fig-many-delta}
 \end{figure}

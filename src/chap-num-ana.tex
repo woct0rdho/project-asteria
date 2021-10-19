@@ -4,8 +4,8 @@
 我们做实验得到一些数据点，然后脑补出其他地方的数据，这个过程称为插值。脑补出两个点之间的数据叫作内插，脑补出这些区域以外的数据则叫作外插或者外推，我们先讲内插。最简单的想法是把两个相邻的点用折线段连起来，称为线性插值，如图\ref{fig-disc-data}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/disc-data}
-\includegraphics[scale=0.5]{fig/disc-data-line}
+\includegraphics[scale=0.5]{fig/disc-data.png}
+\includegraphics[scale=0.5]{fig/disc-data-line.png}
 \caption{硬邦邦的插值}
 \label{fig-disc-data}
 \end{figure}
@@ -15,7 +15,7 @@
 也就是说，在每两个点之间画一条曲线段，它的两个端点和两端的导数已经确定，共有四个约束条件，如图\ref{fig-cubic-interpo}。三次函数$f(x)=a x^3+b x^2+c x+d$有四个待定系数，所以我们认为这条曲线是三次函数，然后用四个约束条件解出四个待定系数，这就是三次插值。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/cubic-interpo}
+\includegraphics[scale=0.5]{fig/cubic-interpo.png}
 \caption{两端的位置和方向确定的曲线段}
 \label{fig-cubic-interpo}
 \end{figure}
@@ -38,7 +38,7 @@ d=\frac{1}{4}(2y_1+2y_2+y'_1+y'_2)
 上面的数据点用三次插值的结果如图\ref{fig-disc-data-cubic}。PS之类的软件放大图片的时候用的一般是三次插值，虽然最近几年出现了更厉害的方法。如果给定曲线两端的二阶导数甚至更高阶导数，也可以用更高次的多项式实现插值。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/disc-data-cubic}
+\includegraphics[scale=0.5]{fig/disc-data-cubic.png}
 \caption{比较光滑的插值}
 \label{fig-disc-data-cubic}
 \end{figure}
@@ -52,7 +52,7 @@ d=\frac{1}{4}(2y_1+2y_2+y'_1+y'_2)
 同样的数据点用拉格朗日插值的结果如图\ref{fig-disc-data-lag}。拉格朗日插值不仅适用于内插，也经常用于外推，图中画出了数据点以外的一段。可以看出，数据点附近的图像会向上和向下超出数据点，比三次插值更加明显。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/disc-data-lag}
+\includegraphics[scale=0.5]{fig/disc-data-lag.png}
 \caption{飞起来的插值}
 \label{fig-disc-data-lag}
 \end{figure}
@@ -94,7 +94,7 @@ y_n&=L(x_n)=a_0+x_n a_1+x_n^2 a_2+\dots+x_n^{n-1} a_{n-1}
 如果利用导数$f'(x)$，还有更快的方法。我们猜：$|f'(x)|$越小，$x$就越靠近$x_0$，如图\ref{fig-newton-iter}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/newton-iter}
+\includegraphics[scale=0.5]{fig/newton-iter.png}
 \caption{许多情况下这样猜是有道理的}
 \label{fig-newton-iter}
 \end{figure}
@@ -112,7 +112,7 @@ y_n&=L(x_n)=a_0+x_n a_1+x_n^2 a_2+\dots+x_n^{n-1} a_{n-1}
 但是，牛顿法难以判断$f(x)$根本没有零点的情况。即使有零点，牛顿法也不一定收敛，如图\ref{fig-newton-iter-boom}。这跟初始位置的选取有关，需要其他方法来判断合适的初始位置，这里就不仔细讲了。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/newton-iter-boom}
+\includegraphics[scale=0.5]{fig/newton-iter-boom.png}
 \caption{牛顿气得从棺材里爬了出来}
 \label{fig-newton-iter-boom}
 \end{figure}
@@ -155,7 +155,7 @@ f(x+2 h)=f(x)+2 f'(x) h+2 f''(x) h^2+\frac{4}{3} f^{(3)}(x) h^3+\frac{2}{3} f^{(
 它的几何意义则是用直角梯形代替矩形，也就是把曲线近似成折线段，误差为$\Sigma O(n^3)$。如果把曲线近似成抛物线段，结果还能更准确，但是推导起来比较麻烦，这里也不仔细讲了。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/adjust-h}
+\includegraphics[scale=0.5]{fig/adjust-h.png}
 \caption{把曲线下的面积近似成矩形}
 \label{fig-adjust-h}
 \end{figure}
@@ -174,7 +174,7 @@ $f'(x_i)$前面留一个$1$是为了防止$f'(x_i)$很小的时候爆掉。这�
 比如我们要算圆的面积，量纲分析可以得到$S=A r^2$，然后要确定系数$A$。我们知道判断一个点在圆内的方法是$x^2+y^2<r^2$，但是假装不知道怎么从它推导出圆的面积公式。现在画一个边长为$2$的正方形，我们知道它的面积为$4$，内接圆的半径$r=1$。用电脑在正方形里随机选取$10000$个点（或者说生成$10000$个随机数对$(x,y),-1<x<1,-1<y<1$），如图\ref{fig-monte-carlo-circle}。然后数一数，共有$7879$个点在圆内，所以$S=\frac{4 \times 7879}{10000}=3.1516$，我们可以猜$A=\pi$。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/monte-carlo-circle}
+\includegraphics[scale=0.5]{fig/monte-carlo-circle.png}
 \caption{对密集恐惧症患者造成伤害}
 \label{fig-monte-carlo-circle}
 \end{figure}
@@ -190,7 +190,7 @@ $f'(x_i)$前面留一个$1$是为了防止$f'(x_i)$很小的时候爆掉。这�
 比如这样一个问题：在一维情况下，把$N$只兔子放在一个长为$L$的笼子里，如图\ref{fig-rabbit-box}。每只兔子看作长为$a$的线段，兔子不能相互重叠，也不能与两边的墙重叠。现在求坐标为$x$的点被兔子占据的概率。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/rabbit-box}
+\includegraphics[scale=0.5]{fig/rabbit-box.png}
 \caption{向蔡老师致敬}
 \label{fig-rabbit-box}
 \end{figure}
@@ -205,7 +205,7 @@ $f'(x_i)$前面留一个$1$是为了防止$f'(x_i)$很小的时候爆掉。这�
 \vfill
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{fig/final-flower}
+\includegraphics[width=\textwidth]{fig/final-flower.png}
 \caption{完结撒花}
 \label{fig-final-flower}
 \end{figure}
