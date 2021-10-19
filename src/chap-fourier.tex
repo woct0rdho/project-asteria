@@ -4,7 +4,7 @@
 一个三角函数（这里指正弦函数或者余弦函数）的图像我们都很熟悉，两个相同频率的三角函数加起来还是相同频率的三角函数。但是把不同频率的三角函数加起来，图像就会变复杂。比如$f(x)=\sin x+2 \sin 2 x+3 \sin 3 x+4 \cos 4 x+5 \cos 5 x$，它的图像如图\ref{fig-trigo-sum}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/trigo-sum}
+\includegraphics[scale=0.5]{fig/trigo-sum.png}
 \caption{一坨三角函数}
 \label{fig-trigo-sum}
 \end{figure}
@@ -17,9 +17,9 @@ f(x)=\frac{4}{\pi} \sum_{n=0}^{\infty} \frac{1}{2 n+1} \sin (2 n+1) x=\frac{4}{\
 虽然这个式子又有无穷级数又有$\pi$，但是不要怕，待会就要讲它是怎么算出来的。图\ref{fig-trigo-square-wave}分别是前$3$、$6$、10项的图像。可以证明，如果把无穷多项加起来，图像就会无限接近方波。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.4]{fig/trigo-square-wave}
-\includegraphics[scale=0.4]{fig/trigo-square-wave-2}
-\includegraphics[scale=0.4]{fig/trigo-square-wave-3}
+\includegraphics[scale=0.4]{fig/trigo-square-wave.png}
+\includegraphics[scale=0.4]{fig/trigo-square-wave-2.png}
+\includegraphics[scale=0.4]{fig/trigo-square-wave-3.png}
 \caption{越来越有方波的感觉了}
 \label{fig-trigo-square-wave}
 \end{figure}
@@ -36,7 +36,7 @@ f(x)=\frac{\pi}{2}-\frac{4}{\pi} \sum_{n=0}^{\infty} \frac{1}{(2 n+1)^2} \cos (2
 前$5$项如图\ref{fig-trigo-triangle-wave}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/trigo-triangle-wave}
+\includegraphics[scale=0.5]{fig/trigo-triangle-wave.png}
 \caption{$\Lambda\Lambda\Lambda\Lambda\Lambda\Lambda$}
 \label{fig-trigo-triangle-wave}
 \end{figure}
@@ -96,7 +96,7 @@ f(x)=\begin{cases} f(x+2 \pi), &x \le -\pi \\ x, &-\pi<x \le \pi \\ f(x-2 \pi), 
 前$5$项如图\ref{fig-trigo-x}。（因此上面方波的解析式我没写$(-\pi,\pi)$以外的东西）
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/trigo-x}
+\includegraphics[scale=0.5]{fig/trigo-x.png}
 \caption{就是把$(-\pi,\pi)$以内的东西往两边复制}
 \label{fig-trigo-x}
 \end{figure}
@@ -150,8 +150,8 @@ a_n&=\frac{\langle f(x),\rme^{\rmi n \frac{2 \pi}{T} x} \rangle}{\langle \rme^{\
 举个栗子：$f(x)=\rme^{-\frac{1}{2} x^2} \sin 10 x$，经过一些困难的计算可以得到$g(k)=-\frac{\rmi}{2} \rme^{-\frac{1}{2} k^2-50}(\rme^{10 k}-\rme^{-10 k})$，如图\ref{fig-gauss-sin10x}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/gauss-sin10x}
-\includegraphics[scale=0.5]{fig/gauss-sin10x-g}
+\includegraphics[scale=0.5]{fig/gauss-sin10x.png}
+\includegraphics[scale=0.5]{fig/gauss-sin10x-g.png}
 \caption{一下子举不出更简单的栗子，计算过程就不在这里讲了}
 \label{fig-gauss-sin10x}
 \end{figure}
@@ -167,8 +167,8 @@ a_n&=\frac{\langle f(x),\rme^{\rmi n \frac{2 \pi}{T} x} \rangle}{\langle \rme^{\
 再举个栗子：$f(x)=\begin{cases} \cos 10 x, &-\frac{1}{2}<x<\frac{1}{2} \\ 0, &x<-\frac{1}{2} \text{或} x>\frac{1}{2} \end{cases}$，$g(k)=\sqrt{\frac{2}{\pi}} \frac{k \cos 5 \sin \frac{1}{2} k-10 \sin 5 \cos \frac{1}{2} k}{k^2-100}$，如图\ref{fig-block-sin10x}。
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{fig/block-sin10x}
-\includegraphics[scale=0.5]{fig/block-sin10x-g}
+\includegraphics[scale=0.5]{fig/block-sin10x.png}
+\includegraphics[scale=0.5]{fig/block-sin10x-g.png}
 \caption{这次是偶函数}
 \label{fig-block-sin10x}
 \end{figure}
